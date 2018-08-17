@@ -1,0 +1,46 @@
+@model IEnumerable<CareerInfo.Model.News>
+
+@{
+     ViewData["Title"] = "News";
+     Layout = "_InnerPages";
+     ViewBag.BodyId = "news";
+}
+
+
+<div id="innerBanner">
+     <div class="container-fluid">
+          <h2><span class="glyphicons glyphicons-newspaper"></span> News</h2>
+          <p>list of all articles found</p>
+     </div>
+</div>
+
+
+<div id="innerCon">
+     <div class="container-fluid">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+               @foreach (var item in Model)
+               {
+                    <div>
+                         <h2><span class="glyphicons glyphicons-newspaper"></span> @item.Title</h2>
+                         <p>@item.Description</p>
+
+                         <div class="statOptions">
+                              <div>
+                                   <p>
+                                        <a href="/News/Details/@item.Tagname"><span class="fa fa-folder-open"></span> View Details</a>
+                                   </p>
+                              </div>
+                         </div>
+
+                         
+                    </div>
+               }
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               <div>
+                    <h2><span class="fa fa-newspaper-o"></span> Latest News</h2>
+               </div>
+          </div>
+     </div>
+</div>

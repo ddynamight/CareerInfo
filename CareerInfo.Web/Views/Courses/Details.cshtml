@@ -1,0 +1,117 @@
+@model CareerInfo.Model.Course
+
+@{
+     ViewData["Title"] = @Model.Name;
+     Layout = "_InnerPages";
+     ViewBag.BodyId = "courses";
+}
+
+
+<div id="courseBanner" style="background-image: url('/CoursesImages/@Model.Image')">
+     <div class="container">
+          <h2><span class="fa fa-book"></span> @Model.Name</h2>
+          <br />
+          <h4>@Model.Description</h4>
+     </div>
+</div>
+
+
+
+
+<div id="innerCon">
+     <div class="container-fluid">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+               <div>
+                    <h2><span class="fa fa-mortar-board"></span> Course Details</h2>
+
+                    @Html.Raw(Model.Details)
+               </div>
+
+               <div>
+                    <h2><span class="glyphicons glyphicons-mixed-buildings"></span> Institutions Offering @Model.Name</h2>
+
+                    @foreach(var sch in Model.SchoolCourses)
+                    {
+                         <h6>@sch.School.Name</h6>
+                    }
+               </div>
+
+               <div>
+                    <h2><span class="fa fa-comments"></span> Requirements</h2>
+                    <h6>O-Level Subjects: <span>@Model.Requirement.Olevel</span></h6>
+                    <h6>A-Level Subjects: <span>@Model.Requirement.Alevel</span> </h6>
+                    <h6>Jamb Subjects: <span>@Model.Requirement.Jamb</span></h6>
+                    <h6>Jamb Score (Min): <span>Contact Institution of Choice</span></h6>
+                    <h6>Post UTME Score (Min): <span>Contact Institution of Choice</span></h6>
+               </div>
+
+               <div>
+                    <h2><span class="fa fa-cogs"></span> Profession and Industry</h2>
+                    @Html.Raw(Model.Profession.Details)
+               </div>
+
+               <div>
+                    <h2><span class="fa fa-comments"></span> Personal Skills</h2>
+                    @Html.Raw(Model.Personality.Details)
+               </div>
+
+               <div>
+                    <h2><span class="fa fa-comments"></span> Reviews and Ratings</h2>
+
+                    <div id="reviewsCon">
+                         @if(User.Identity.IsAuthenticated)
+                         {
+                              @await Html.PartialAsync("_Review")
+                         }else{
+
+                              <div class="comments text-center">
+                                   <h4>You need to be logged to comment</h4>
+
+                                   <a class="btn btn-unique" href="/Account/Login">Login to Comment and Review</a>
+                              </div>
+                         }    
+                    </div>
+
+               </div>
+
+               <div>
+                    <h2><span class="fa fa-comments"></span> What People are Saying </h2>
+                    @foreach (var item in Model.Reviews.OrderByDescending(e => e.Date))
+                    {
+                         <div class="comments">
+                              <h4>@item.ApplicationUser.Firstname @item.ApplicationUser.Lastname on @item.Date.ToString("D") Rated this @item.Rating and wrote </h4>
+                              <p>@item.Comment</p>
+                         </div>
+                    }
+               </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               <div>
+                    <h2><span class="fa fa-inbox"></span> Need More Information?</h2>
+
+                    <div id="requestCon">
+                         @if (User.Identity.IsAuthenticated)
+                         {
+                              @await Html.PartialAsync("_Request")
+                         }
+                         else
+                         {
+                              <div class="comments text-center">
+                                   <a class="btn btn-unique" href="/Account/Login">Log In to Request More Information</a>
+                              </div>
+                         }
+                    </div>
+                    
+               </div>
+               
+               <div>
+                    <h2><span class="fa fa-newspaper-o"></span> Latest News</h2>
+               </div>
+
+               <div>
+                    <h2><span class="glyphicons glyphicons-blog"></span> Blog Posts</h2>
+               </div>
+          </div>
+     </div>
+</div>

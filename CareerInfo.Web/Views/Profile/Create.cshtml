@@ -1,0 +1,78 @@
+@using CareerInfo.Web.Models.ProfileViewModels
+
+@model AddDetailsViewModel
+
+@{
+     ViewData["Title"] = "Create Profile";
+     Layout = "_Account";
+
+}
+
+
+
+<div id="innerCon">
+     <div class="container-fluid">
+          <h2 class="text-center">Create Profile </h2>
+
+          <form asp-controller="Profile" asp-action="Create" method="post">
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                    <div class="form-group">
+                         <label for="tbFirstname">Firstname</label>
+                         <input type="text" class="form-control" id="tbFirstname" name="Firstname" placeholder="Firstname">
+                    </div>
+
+                    <div class="form-group">
+                         <label for="tbMiddlename">Middlename</label>
+                         <input type="text" class="form-control" id="tbMiddlename" name="Middlename" placeholder="Middlename">
+                    </div>
+
+                    <div class="form-group">
+                         <label for="tbLastname">Lastname</label>
+                         <input type="text" class="form-control" id="tbLastname" name="Lastname" placeholder="Lastname">
+                    </div>
+
+                    <div class="form-group">
+                         <label for="tbDob">Date of Birth</label>
+                         <input type="datetime" class="form-control" id="tbDob" name="DateOfBirth" placeholder="Date of Birth e.g. MM/DD/YYYY">
+                    </div>
+
+                    <div class="form-group">
+                         <label for="sexDdl">Sex</label>
+                         @Html.DropDownList("Sex", (SelectList)ViewData["ddlSex"], new { @class = "form-control", id = "sexDdl" })
+                    </div>
+               </div>
+
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                         <label for="tbAddress">Address</label>
+                         <input type="text" class="form-control" id="tbAddress" name="Address" placeholder="Address">
+                    </div>
+
+                    <div class="form-group">
+                         <label for="tbLga">Local Govt. Area</label>
+                         <input type="text" class="form-control" id="tbLga" name="LocalGovtArea" placeholder="Local Govt. Area">
+                    </div>
+
+                    <div class="form-group">
+                         <label for="tbState">State</label>
+                         <input type="text" class="form-control" id="tbState" name="State" placeholder="State">
+                    </div>
+
+                    <div class="form-group">
+                         <label for="countryDdl">Country</label>
+                         @Html.DropDownList("Country", (SelectList)ViewData["ddlCountry"], new { @class = "form-control", id = "countryDdl" })
+                    </div>
+
+                    <div class="form-group">
+                         <label for="tbPhone">Phone Number</label>
+                         <input type="text" class="form-control" id="tbPhone" name="PhoneNumber" placeholder="Phone Number">
+                    </div>
+               </div>
+
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <button type="submit" class="btn btn-default">Create Profile</button>
+               </div>
+          </form>
+     </div>
+</div>

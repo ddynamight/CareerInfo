@@ -1,0 +1,42 @@
+@model CareerInfo.Model.Blog
+
+@{
+     ViewData["Title"] = @Model.Title;
+     Layout = "_InnerPages";
+     ViewBag.BodyId = "blogs";
+}
+
+
+<div id="courseBanner" style="background-image: url('/BlogsImages/@Model.Image')">
+     <div class="container">
+          <h2><span class="fa fa-book"></span> @Model.Title</h2>
+          <br />
+          <h4>@Model.Description</h4>
+     </div>
+</div>
+
+
+
+
+<div id="innerCon">
+     <div class="container-fluid">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+               <div>
+                    <h2><span class="fa fa-mortar-board"></span> Blog Article </h2>
+
+                    @Html.Raw(Model.Article)
+               </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+               <div>
+                    <h2><span class="fa fa-newspaper-o"></span> Latest News</h2>
+               </div>
+
+               <div>
+                    <h2><span class="glyphicons glyphicons-blog"></span> Similar Posts</h2>
+               </div>
+          </div>
+     </div>
+</div>

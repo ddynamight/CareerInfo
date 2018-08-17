@@ -1,0 +1,111 @@
+@model IEnumerable<CareerInfo.Model.ApplicationUser>
+
+
+@{
+     ViewData["Title"] = "Users";
+     ViewBag.BodyId = "users";
+}
+
+
+
+@section Nav{
+     @Html.Partial("_UserNav")
+}
+
+<div id="innerHeader">
+     <div class="container-fluid">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+               <h2><span class="fa fa-group"></span> Users <span class="badge">@Model.Count()</span></h2>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right">
+               <input class="search input-sm" placeholder="Search" type="search" />
+          </div>
+     </div>
+</div>
+
+
+<div id="innerCon">
+     <div class="container-fluid">
+          <table class="table table-responsive">
+               <thead>
+                    <tr>
+                         <th>
+                              S/N
+                         </th>
+                         <th>
+                              Username
+                         </th>
+                         <th>
+                              Fullname
+                         </th>
+                         <th>
+                              Email
+                         </th>
+                         <th>
+                              Phone No
+                         </th>
+                         <th>
+                              <span class="fa fa-lock"></span>
+                         </th>
+                    </tr>
+               </thead>
+               <tbody>
+                    @foreach (var item in Model.OrderByDescending(e => e.Firstname))
+                    {
+                         <tr>
+                              <td></td>
+                              <td class="username">
+                                   @item.UserName
+                              </td>
+                              <td class="name">
+                                   @item.Firstname @item.Lastname
+                              </td>
+                              <td class="email">
+                                   @item.Email
+                              </td>
+                              <td>
+                                   @item.PhoneNumber
+                              </td>
+                              <td>
+                                   @item.LockoutEnabled
+                              </td>
+                         </tr>
+                    }
+               </tbody>
+               <tfoot>
+
+               </tfoot>
+          </table>
+     </div>
+</div>
+
+
+<script type="text/javascript">
+     var options = {
+          valueNames: ['username', 'name', 'email']
+     };
+
+     var userList = new List('mainInnerCon', options);
+</script>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog" role="document">
+          <div class="modal-content">
+               <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+               </div>
+               <div class="modal-body">                    
+                        @await Html.PartialAsync("Create")
+               </div>
+               <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+               </div>
+          </div>
+     </div>
+</div>

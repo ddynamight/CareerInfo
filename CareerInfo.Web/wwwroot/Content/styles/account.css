@@ -1,0 +1,66 @@
+﻿body, header, section, article, aside, div, img, h1, h2, h3, h4, h5, h6, p, a, hr, ul, ol, li, table, tr, th, td, form, fieldset, legend, input {
+     margin: 0;
+     padding: 0;
+}
+
+/* RESET STYLES END HERE
+-------------------------------------------------------------*/
+
+body {
+     background-color: rgba(220, 220, 220, 1);
+     font-family: 'Segoe UI';
+     width: 100%;
+}
+
+
+header{
+     clear: both;
+     min-height: 100px;
+     padding: 0 0 2em 0;
+     width: 100%;
+}
+
+header .container div[class*=col] img
+{
+     float: left;
+     max-height: 120px;
+}
+
+
+main{
+     clear: both;
+     min-height: 60vh;
+     width: 100%;
+}
+
+
+main .container div[class*=col] h4
+{
+     clear: both;
+     font-family: inderRegular;
+     font-size: 1.5em;
+     margin: 0;
+     padding: 0 0 1em 0;    
+}
+
+
+main .container div[class*=col] form
+{
+     padding: 1em;
+}
+
+main .container div[class*=col] form p
+{
+     color: rgba(0, 0, 0, 1);
+     margin: 0;
+     padding: 0;
+}
+
+main .container div[class*=col] form p a
+{
+     color: rgba(19, 104, 155, 1);
+     font-size: 1.2em;
+     margin: 0;
+     padding: 0;
+     text-decoration: none;
+}

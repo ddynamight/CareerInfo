@@ -1,0 +1,102 @@
+
+@{
+     ViewData["Title"] = "Home";
+     ViewBag.BodyId = "home";
+}
+
+
+<div id="dashCon">
+     <div id="dashboard">
+          <div>
+               <p><span class="glyphicons glyphicons-mixed-buildings"></span> Schools</p>
+               <h2>@ViewData["schoolCount"]</h2>
+               <p>schools listed</p>
+          </div>
+
+          <div>
+               <p><span class="fa fa-book"></span> Courses</p>
+               <h2>@ViewData["courseCount"]</h2>
+               <p>courses listed</p>
+          </div>
+
+          <div>
+               <p><span class="fa fa-user"></span> Users</p>
+               <h2>@ViewData["userCount"]</h2>
+               <p>users Registered</p>
+          </div>
+
+          <div>
+               <p><span class="fa fa-refresh"></span> Requests</p>
+               <h2>@ViewData["requestCount"]</h2>
+               <p>requests received</p>
+          </div>
+
+          <div>
+               <p><span class="fa fa-comments"></span> Reviews</p>
+               <h2>@ViewData["reviewCount"]</h2>
+               <p>reviews receieved</p>
+          </div>
+     </div>
+
+     <div id="tabCon">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+               <li role="presentation" class="active"><a href="#schoolstab" aria-controls="schoolstab" role="tab" data-toggle="tab">Schools </a></li>
+               <li role="presentation"><a href="#coursestab" aria-controls="coursestab" role="tab" data-toggle="tab">Courses </a></li>
+               <li role="presentation"><a href="#userstab" aria-controls="userstab" role="tab" data-toggle="tab">Users</a></li>
+               <li role="presentation"><a href="#requeststab" aria-controls="requeststab" role="tab" data-toggle="tab">Requests</a></li>
+               <li role="presentation"><a href="#reviewstab" aria-controls="reviewstab" role="tab" data-toggle="tab">Reviews</a></li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+               <div role="tabpanel" class="tab-pane active" id="schoolstab">
+
+                    <h2>Schools Visuals</h2>
+
+               </div>
+               <div role="tabpanel" class="tab-pane" id="coursestab">
+
+                    <h2>Courses Visuals</h2>
+
+               </div>
+               <div role="tabpanel" class="tab-pane" id="userstab">
+
+                    <h2>Users Visuals</h2>
+
+               </div>
+               <div role="tabpanel" class="tab-pane" id="requeststab">
+
+                    <h2>Requests Visuals</h2>
+
+               </div>
+               <div role="tabpanel" class="tab-pane" id="reviewstab">
+
+                    <h2>Reviews Visuals</h2>
+
+               </div>
+          </div>
+     </div>
+
+     @*<div id="stats">
+              <div>
+                  <div>
+
+                  </div>
+              </div>
+
+              <div>
+                  <div>
+
+                  </div>
+              </div>
+
+              <div>
+                  <div>
+
+                  </div>
+              </div>
+          </div>*@
+</div>
+
+
+

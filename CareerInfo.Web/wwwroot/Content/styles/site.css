@@ -1,0 +1,736 @@
+﻿body, header, main, article, aside, div, img, h1, h2, h3, h4, h5, h6, p, a, hr
+{
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	clear: both;
+	font-family: 'Segoe UI';
+	width: 100%;
+}
+
+
+.btn-unique {
+     background-color: rgba(19, 104, 155, 1);
+     color: rgba(255, 255, 255, 1)
+}
+
+#padder {
+     background-color: transparent !important;
+     clear: both;
+     color: rgba(255, 255, 255, 1);
+     height: auto;
+     margin: 0;
+     min-height: 10px;
+     padding: 0.5em 0;
+     position: absolute;
+     top: 0;
+     width: 100%;
+     z-index: 1000;
+}
+
+#padder .container-fluid div[class*=col] p
+{
+     background-color: transparent !important;
+}
+
+
+header {
+    background-color: transparent !important;
+    clear: both;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    margin: 0;
+    min-height: 50px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+header .container-fluid {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+header .container-fluid div[class*=col-] {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+header .container-fluid div[class*=col-] h1 {
+    font-family: inderRegular;
+    font-size: 3em;
+    padding: 0.2em 0;
+}
+
+header .container-fluid div[class*=col-] h1 span {
+    float: left;
+    padding: 0.3em 0 0 0;
+}
+
+header .container-fluid div[class*=col-] h1 a {
+	text-align: left;
+	text-decoration: none;
+}
+
+header .container-fluid div[class*=col-] h1 a:hover {
+    text-decoration: none;
+}
+
+header .container-fluid div[class*=col-] h1 a img {
+    float: left;
+    max-height: 100px;
+    padding: 0 0.2em;
+}
+
+
+header .container-fluid div[class*=col-] p {
+    font-size: 1.0em;
+    font-style: italic;
+    font-weight: 900;
+    padding: 0 1.5em;
+}
+
+
+header .container-fluid div[class*=col-] form {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+header .container-fluid div[class*=col-] ul {
+     float: right;
+     margin: 0;
+     padding: 2em 0;
+     list-style: none;
+}
+
+header .container-fluid div[class*=col-] ul li {
+     display: inline-block;
+     margin: 0;
+     padding: 0;
+}
+
+header .container-fluid div[class*=col-] ul li a {
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 1);
+    font-family: inderRegular;
+    font-size: 1.2em;
+    margin: 2em 0em;
+    padding: 0.25em 0.5em;
+}
+
+header .container-fluid div[class*=col-] ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+	color: rgba(255, 255, 255, 1);
+}
+
+/* HEADER STYLES END HERE
+-------------------------------------------------------------*/
+
+main {
+     clear: both;
+     height: auto;
+     margin: 0;
+     min-height: 600px;
+     padding: 0;
+     width: 100%;
+}
+
+
+main #banner {
+     background-image: url("/Content/images/banner1.png");
+     border-bottom: 1px solid rgba(255, 255, 255, 1);
+     clear: both;
+     height: 100vh;
+     margin: 0;
+     padding: 0;
+     text-align: center;
+     width: 100%;
+}
+
+main #banner .container > div{
+     clear: both;
+     height: auto;
+     margin: 10em auto 0 auto;
+     min-height: 50px;
+     padding: 5em 0 0 0;
+     width: calc(100% - 20%);
+}
+
+main #banner .container > div h2 {
+     clear: both;
+    color: rgba(255, 255, 255, 1);
+    font-family: inderRegular;
+    font-size: 2.6em;
+    padding: 0;
+}
+
+main #banner .container > div h2 span {
+     color: rgba(19, 104, 155, 1);
+}
+
+main #banner .container > div h3 {
+    color: rgba(255, 255, 255, 1);
+    font-family: inderRegular;
+    font-size: 2.5em;
+    padding: 0.25em;
+    position: relative;
+    text-align: center;
+}
+
+main #banner .container > div h4 {
+    color: rgba(255, 255, 255, 1);
+    font-family: "Segoe UI";
+    font-size: 2em;
+    margin-bottom: 3em;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+main #banner .container > div p {
+    color: rgba(255, 255, 255, 1);
+    font-family: "Segoe UI";
+    font-size: 2em;
+    margin-bottom: 1em;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+main #banner .container > div a {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 1);
+    clear: both;
+    color: rgba(255, 255, 255, 1);
+    font-family: inderRegular;
+    font-size: 1.5em;
+    font-weight: 900;
+    margin: 1em 0 0 0;
+    padding: 0.5em 1.5em;
+    position: relative;
+    text-decoration: none;
+    text-shadow: none !important;
+}
+
+main #banner .container > a:hover {
+    background-color: rgba(255, 255, 255, 1) !important;
+    color: rgba(19, 104, 155, 1);
+}
+
+main #banner .container form
+{
+     clear: both;
+     margin: 0 auto 0 auto;
+     position: relative;
+     width: calc(100% - 20%);
+}
+
+main #banner .container form div[class*=col] #searchControls
+{
+     display: flex;
+     width: 100%;
+}
+
+main #banner .container form div[class*=col] #searchControls div
+{
+     flex: 1;
+}
+
+main #banner .container form div[class*=col] #searchControls div select
+{
+     border: 2px solid rgba(14, 109, 155, 1);
+     border-radius: 0;
+     font-family: inderRegular;
+     width: calc(100% - 10%);
+}
+
+main #banner .container form div[class*=col] input
+{
+     background-color: transparent;
+     border: 2px solid rgba(14, 109, 155, 1);
+     border-radius: 0;
+}
+
+main #banner .container form div[class*=col] button {
+     border: 2px solid rgba(14, 109, 155, 1);
+     border-radius: 0;
+     font-family: inderRegular;
+     width: calc(100% - 10%);
+}
+
+main #banner .container form div[class*=col] button:hover {
+     background-color: transparent;
+     color: rgba(255, 255, 255, 1);
+}
+
+
+main #banner .container form div[class*=col] h6 {
+     color: rgba(255, 255, 255, 1);
+     font-family: 'Segoe UI';
+     font-size: 1.5em;
+     padding: 1em 0;
+     text-align: center !important;
+     text-transform: lowercase;
+}
+
+/* #banner and header STYLES END HERE
+------------------------------------------------------*/
+
+
+main #newsBlog
+{
+     background-color: rgba(19, 104, 155, 0.3);
+     bottom: 0;
+     clear: both;
+     display: flex;
+     height: auto;
+     min-height: 25px;
+     padding: 0.4em 0 0.25em 0;
+     position: fixed;
+     width: 100%;
+}
+
+main #newsBlog div{
+     flex: 1;
+}
+
+main #newsBlog div .container-fluid {
+     display: flex;
+     padding-bottom: 0;
+     padding-top: 0;
+}
+
+main #newsBlog div .container-fluid label {
+     color: rgba(255, 255, 255, 1);
+     flex: 1;
+     text-transform: uppercase;
+}
+
+main #newsBlog div .container-fluid p {
+     color: rgba(255, 255, 255, 1);
+     flex: 3;
+     font-family: inderRegular;
+     font-size: 1.2em;
+     text-align: left;
+}
+
+main #newsBlog div .container-fluid p a {
+     color: rgba(255, 255, 255, 1);
+     display: block;
+     text-decoration: none;
+     text-transform: none;
+}
+
+
+/* NewsBlog Sticker Styles Ends Here
+----------------------------------------------- */
+
+
+main #indexCol
+{
+     background-color: rgba(0, 0, 0, 0.3);
+	clear: both;
+     display: block;
+	height: 20vh;
+     margin: 0;
+	padding: 2em 0;
+     position: absolute;
+     text-align: center;
+     bottom: 1px;
+	width: 100%;
+}
+
+main #indexCol div[class*=col] h2
+{
+    color: rgba(255, 255, 255, 1);
+    font-size: 1.8em;
+}
+
+
+main #indexCol div[class*=col] p
+{
+    color: rgba(255, 255, 255, 1);
+    font-size: 1em;
+}
+
+
+/* IndexCol Style Ends Here
+ -------------------------------------------------- */
+
+
+
+main #indexTabs {
+     clear: both;
+     height: auto;
+     margin: 0;
+     min-height: 40vh;
+     padding: 4em 0 0 0;
+     width: 100%;
+}
+
+main #indexTabs .container-fluid div[class*=col] div {
+     color: rgba(255, 255, 255, 1);
+     height: auto;
+     margin: 1em;
+     min-height: 200px;
+     padding: 3.5em 2em;
+     text-align: center;
+}
+
+main #indexTabs .container-fluid div[class*=col]:nth-child(2n+1) div {
+     background-color: rgba(14, 109, 155, 0.8);
+}
+
+main #indexTabs .container-fluid div[class*=col]:nth-child(2n+2) div {
+     background-color: rgba(14, 155, 109, 0.8);
+}
+
+main #indexTabs .container-fluid div[class*=col]:nth-child(2n+3) div {
+     background-color: rgba(155, 14, 109, 0.8);
+}
+
+main #indexTabs .container-fluid div[class*=col] div:hover {
+     background-color: rgba(0, 0, 0, 0.8);
+}
+
+main #indexTabs .container-fluid div[class*=col] div h2 {
+     clear: both;
+     font-family: inderRegular;
+     font-size: 1.5em;
+     padding: 1em 0;
+}
+
+
+
+/* IndexTabs Style Ends Here
+ -------------------------------------------------- */
+
+
+main #indexFeatured 
+{
+     clear: both;
+     height: auto;
+     margin: 0;
+     min-height: 50vh;
+     padding: 4em 0 0 0;
+     width: 100%;
+}
+
+main #indexFeatured .container-fluid {
+     margin-bottom: 5em;
+     margin-top: 1em;
+}
+
+main #indexFeatured .container-fluid:last-child{
+     margin-bottom: 0 !important;
+}
+
+main #indexFeatured .container-fluid h2
+{
+     clear: both;
+     font-family: inderRegular;
+     font-size: 2em;
+}
+
+main #indexFeatured .container-fluid div[class*=col]:first-child > div {
+     height: 210px;
+     margin: 0 0 2em 0 !important;
+}
+
+main #indexFeatured .container-fluid div[class*=col]:first-child > div:first-child {
+     background-attachment: scroll;
+     background-image: url("/Content/images/course1.png");
+     background-position: center center;
+     background-repeat: no-repeat;
+}
+
+main #indexFeatured .container-fluid div[class*=col]:first-child > div:last-child {
+     background-attachment: scroll;
+     background-image: url("/Content/images/course2.png");
+     background-position: center center;
+     background-repeat: no-repeat;
+}
+
+main #indexFeatured .container-fluid div[class*=col]:last-child > div {
+     background-attachment: scroll;
+     background-image: url("/Content/images/course3.png");
+     background-position: center center;
+     background-repeat: no-repeat;
+     height: 450px;
+     margin: 0 0 1em 0;
+}
+
+main #indexFeatured .container-fluid div[class*=col] > div
+{
+     background-color: rgba(0, 0, 0, 0.2);
+     clear: both;
+     overflow: hidden;
+     width: 100%;
+}
+
+main #indexFeatured .container-fluid div[class*=col] > div:hover {
+     background-color: rgba(0, 0, 0, 1);
+}
+
+main #indexFeatured .container-fluid div[class*=col] > div div {
+     clear: both;
+     color: rgba(255, 255, 255, 1);
+     margin: 5em 0 0 0;
+     padding: 0 5em;
+     text-align: center;
+     z-index: 999;
+}
+
+main #indexFeatured .container-fluid div[class*=col]:last-child > div div {
+     margin: 15em 0 0 0;
+}
+
+main #indexFeatured .container-fluid div[class*=col] > div div h2 {
+     clear: both;
+     font-family: inderRegular;
+     font-size: 1.8em;
+}
+
+main #indexFeatured .container-fluid div[class*=col] > div div p {
+     clear: both;
+}
+
+
+
+/* IndexFeatured Style Ends Here
+ -------------------------------------------------- */
+
+main #indexNewsletter {
+     background-color: rgba(155, 14, 109, 1);
+     clear: both;
+     color: rgba(255, 255, 255, 1);
+     height: auto;
+     margin: 2em 0 0 0;
+     min-height: 10vh;
+     padding: 2em 0;
+     width: 100%;
+}
+
+
+main #indexNewsletter .container-fluid div[class*=col] h2
+{
+     clear: both;
+     font-family: inderRegular;
+     font-size: 1.8em;
+}
+
+main #indexNewsletter .container-fluid div[class*=col] p
+{
+     clear: both;
+     font-size: 1.1em;
+}
+
+/* IndexNewsletter Style Ends Here
+ -------------------------------------------------- */
+
+
+main #indexNewsBlog
+{
+     clear: both;
+     height: auto;
+     margin: 0;
+     min-height: 50vh;
+     padding: 5em 0;
+     width: 100%;
+}
+
+main #indexNewsBlog .container-fluid div[class*=col] > h2
+{
+     border-bottom: 2px solid rgba(14, 109, 155, 1);
+     color: rgba(14, 109, 155, 1);
+     clear: both;
+     font-family: inderRegular;
+     font-size: 1.85em;
+     margin: 0 0 1.5em 0;
+     padding: 1em 0 0.5em 0;
+}
+
+main #indexNewsBlog .container-fluid div[class*=col] > img {
+     clear: both;
+     padding: 0 0 1em 0;
+}
+
+main #indexNewsBlog .container-fluid div[class*=col] > p {
+     clear: both;
+     font-size: 1.2em;
+     margin: 0 0 1em 0;
+     padding: 0.5em 0;
+     text-align: justify;
+}
+
+
+main #indexNewsBlog .container-fluid div[class*=col] > a {
+     background-color: rgba(14, 109, 155, 1);
+     color: rgba(255, 255, 255, 1);
+     font-size: 1.1em;
+     margin: 1.5em auto;
+     padding: 0.5em 1em;
+     text-decoration: none;
+}
+
+main #indexNewsBlog .container-fluid div[class*=col] > a:hover {
+     background-color: rgba(255, 255, 255, 1);
+     border: 1px solid rgba(14, 109, 155, 1);
+     color: rgba(14, 109, 155, 1);
+}
+
+main #indexNewsBlog .container-fluid div[class*=col] > div
+{
+     clear: both;
+     display: flex;
+     height: auto;
+     margin: 1em 0 2em 0;
+     min-height: 150px;
+     padding: 0 0 0.5em 0;
+     width: 100%;
+}
+
+main #indexNewsBlog .container-fluid div[class*=col] > div img
+{
+     float: left;
+     flex: 2;
+     height: 150px;
+     margin: 0 auto;
+     padding: 0;
+}
+
+main #indexNewsBlog .container-fluid div[class*=col] > div div {
+     float: right;
+     flex: 4;
+     padding: 0 1em;
+}
+
+main #indexNewsBlog .container-fluid div[class*=col] > div div h2 {
+     color: rgba(14, 109, 155, 1);
+     font-family: inderRegular;
+     font-size: 1.5em;
+     padding: 0 0 0.5em 0;
+}
+
+main #indexNewsBlog .container-fluid div[class*=col] > div div p {
+     font-size: 1.1em;
+     margin: 0.25em 0 0.5em 0;
+     padding: 0 0 1em 0;
+}
+
+main #indexNewsBlog .container-fluid div[class*=col] > div div a {
+     border: 1px solid rgba(14, 109, 155, 1);
+     color: rgba(14, 109, 155, 1);
+     font-size: 1.1em;
+     margin: 1.5em auto;
+     padding: 0.5em 1em;
+     text-decoration: none;
+}
+
+main #indexNewsBlog .container-fluid div[class*=col] > div div a:hover {
+     background-color: rgba(14, 109, 155, 1);
+     color: rgba(255, 255, 255, 1);
+}
+
+
+
+
+/* IndexNewsBlog Style Ends Here
+ -------------------------------------------------- */
+
+
+
+/* FOOTER SECTION HERE
+-------------------------------------------------*/
+
+footer
+{
+	border-top: 1px solid rgba(255, 255, 255, 1);
+	clear: both;	
+	color: rgba(255, 255, 255, 1);
+    display: flex;
+	font-family: inderRegular;
+	height: auto;
+    margin: 0;
+	min-height: 25vh;
+	padding: 0;
+	width: 100%;
+}
+
+footer > div {
+    background-color: rgba(19, 104, 155, 1);
+    color: rgba(255, 255, 255, 1);
+    flex: 1;
+    padding: 3em;
+}
+
+footer div h2 {
+    font-size: 1.2em;
+    margin: 0 0 0.25em 0;
+}
+
+footer div a {
+    font-size: 1.2em;
+    margin: 1em 0.25em 1em 0;
+    text-decoration: none;
+}
+
+footer div a span {
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 5em;
+    color: rgba(255, 255, 255, 1);
+    padding: 0.75em;
+}
+
+footer div a:hover span {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(19, 104, 155, 1);
+}
+
+footer div p {
+    font-size: 1em;
+    margin: 2em 0 0 0;
+    padding: 0;
+}
+
+
+
+
+
+footer > div:nth-child(2) {
+    background-color: rgba(0, 53, 83, 1);
+    flex: 2.5;
+    text-align: right;
+}
+
+footer div:nth-child(2) .container-fluid div[class*=col-] h2 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 0 0 1em 0;
+    padding: 0 0.2em 0.5em 0;
+}
+
+footer div:nth-child(2) .container-fluid div[class*=col-] p {
+    margin: 0;
+    padding: 0 0.2em 0.5em 0;
+}
+
+footer div:nth-child(2) .container-fluid div[class*=col-] p span {
+    padding: 0.25em;
+}
+
+footer div:nth-child(2) .container-fluid div[class*=col-] p a {
+    color: rgba(255, 255, 255, 1);
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+
+

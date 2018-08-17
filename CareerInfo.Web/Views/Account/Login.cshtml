@@ -1,0 +1,79 @@
+﻿@using System.Collections.Generic
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@using Microsoft.AspNetCore.Identity;
+@using CareerInfo.Model
+@using CareerInfo.Web.Models.AccountViewModels
+
+@model LoginViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+     ViewData["Title"] = "Log In";
+     Layout = "_Account";
+}
+
+<div class="container">
+     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+          <h4>Use a Local Account</h4>
+          <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+
+               <div class="form-group">
+                    <label for="emailTb">Email Address <span class="glyphicon glyphicon-question-sign">
+                              </span></label>
+                    <input class="form-control" id="emailTb" name="Email" placeholder="Email Address e.g. username@domain.com" type="email" />
+               </div>
+
+               <div class="form-group">
+                    <label for="passwordTb">
+                         Password <span class="glyphicon glyphicon-question-sign">
+                         </span>
+                    </label>
+                    <input class="form-control" id="passwordTb" name="Password" placeholder="*********" type="password" />
+               </div>
+
+               <div class="form-group">
+                  <button type="submit" class="btn btn-default">Log in</button>
+               </div>
+               <p class="text-center">
+                    <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Don't Have Account? Register Now</a>
+               </p>
+               <p class="text-center">
+                    <a asp-action="ForgotPassword">Forgot your password?</a>
+               </p>
+          </form>
+      </div>
+
+     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+           <h4>Use another service to log in.</h4>
+           @{
+                var loginProviders = SignInManager.GetExternalAuthenticationSchemes().ToList();
+                if (loginProviders.Count == 0)
+                {
+                     <div>
+                          <p>
+                               There are no external authentication services configured. See <a ="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                               for details on setting up this ASP.NET application to support logging viaexternal services.
+                          </p>
+                     </div>
+                }
+                else
+                {
+                     <form asp-controller="Account" asp-action="ExternalLogin" asp-route-rnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+                          <div>
+                               <p>
+                                    @foreach (var provider in loginProviders)
+                                    {
+                                         <button type="submit" class="btn btn-default" ame="provider" ue="@provider.AuthenticationScheme" title="Log in using our ovider.DisplayName account">@provider.AuthenticationScheme</button>
+                                    }
+                               </p>
+                          </div>
+                     </form>
+                }
+           }
+     </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

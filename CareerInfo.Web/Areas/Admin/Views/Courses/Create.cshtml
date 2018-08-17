@@ -1,0 +1,146 @@
+<div class="container-fluid">
+     @using (Html.BeginForm("Create", "Courses", FormMethod.Post, new { enctype = "multipart/form-data" }))
+     {
+          @Html.AntiForgeryToken()
+          @Html.ValidationSummary(true)
+
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="form-group">
+                    <label for="nameTb">Course Name <span class="glyphicon glyphicon-question-sign"></span></label>
+
+                    <input class="form-control" id="nameTb" name="Name" placeholder="Course Name e.g. Computer Science" type="text" />
+               </div>
+
+               <div class="form-group">
+                    <label for="descriptionTb">Course Description <span class="glyphicon glyphicon-question-sign"></span></label>
+
+                    <input class="form-control" id="descriptionTb" name="Description" placeholder="Course Description e.g. This is the course description..." type="text" />
+               </div>
+
+               <div class="form-group">
+                    <label for="ddlSchool">School <span class="glyphicon glyphicon-question-sign"></span></label>
+
+                    @Html.DropDownList("Schools", (MultiSelectList)ViewData["schoolId"], new { @class = "form-control", multiple = "multiple" })
+               </div>
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="form-group">
+                    <label for="detailsTb">Course Description Details <span class="glyphicon glyphicon-question-sign"></span></label>
+
+                    @Html.TextArea("Details", new { @class = "form-control", id = "detailsTb", placeholder = "Article e.g. This is course has or will serve...", rows = "6" })
+               </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+               <div class="form-group">
+                    <label for="detailsTb">Select an Image to Respresent this Course <span class="text-danger">Recommended Size (1400 X 400)</span> <span class="glyphicon glyphicon-question-sign"></span></label>
+
+                    <input accept="image/*" class="form-control" type="file" id="file" name="file" draggable="true" />
+               </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+               <img class="img img-responsive text-center" id="imageThumb" />
+          </div>
+
+          <br />
+          <br />
+          <br />
+
+          <h4 class="form-divider text-center">Course Requirements</h4>
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="form-group">
+                    <label for="olevelTb">O-Level Subjects <span class="glyphicon glyphicon-question-sign"></span></label>
+
+                    <input class="form-control" id="olevelTb" name="Requirement.Olevel" placeholder="Course O Level Requirement e.g. Mathematics, English" type="text" />
+               </div>
+
+               <div class="form-group">
+                    <label for="jambTb">Jamb Subjects <span class="glyphicon glyphicon-question-sign"></span></label>
+
+                    <input class="form-control" id="jambTb" name="Requirement.Jamb" placeholder="Course Jamb Requirement e.g. Mathematics, English" type="text" />
+               </div>
+
+               <div class="form-group">
+                    <label for="jambScoreTb">Jamb Scores <span class="glyphicon glyphicon-question-sign"></span></label>
+
+                    <input class="form-control" id="jambScoreTb" name="Requirement.JambScore" placeholder="Minimum Jamb Score Requirement e.g. 200" type="number" min="0" />
+               </div>
+
+               <div class="form-group">
+                    <label for="alevelTb">A-Level Subjects <span class="glyphicon glyphicon-question-sign"></span></label>
+
+                    <input class="form-control" id="alevelTb" name="Requirement.Alevel" placeholder="Course A-Level Requirement e.g. Mathematics, English" type="text" />
+               </div>
+
+               <div class="form-group">
+                    <label for="postUtmeTb">Post Utme Score <span class="glyphicon glyphicon-question-sign"></span></label>
+
+                    <input class="form-control" id="postUtmeTb" name="Requirement.PostUtme" placeholder="Course Post UTME Score e.g. 80" type="number" min="0" />
+               </div>
+          </div>
+
+
+          <br />
+          <br />
+          <br />
+
+          <h4 class="form-divider text-center">Profession and Industry </h4>
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="form-group">
+                    <label for="professionDetailsTb">Industrial Description Details <span class="glyphicon glyphicon-question-sign"></span></label>
+
+                    @Html.TextArea("Profession.Details", new { @class = "form-control", id = "professionDetailsTb", placeholder = "Article e.g. This is course has or will serve...", rows = "6" })
+               </div>
+          </div>
+
+          <br />
+          <br />
+          <br />
+
+          <h4 class="form-divider text-center">Personality of People</h4>
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="form-group">
+                    <label for="personalityDetailsTb">Course Personality Description Details <span class="glyphicon glyphicon-question-sign"></span></label>
+
+                    @Html.TextArea("Personality.Details", new { @class = "form-control", id = "personalityDetailsTb", placeholder = "Article e.g. This is course has or will serve...", rows = "6" })
+               </div>
+          </div>
+
+          <br />
+
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+               <p>
+                    <button type="submit" class="btn btn-lg btn-unique"><span class="glyphicon glyphicon-floppy-save"></span> Add Course</button>
+               </p>
+          </div>
+
+     }
+</div>
+
+
+<script>
+    $(function () {
+         $('#detailsTb').ckeditor();
+         $('#professionDetailsTb').ckeditor();
+         $('#personalityDetailsTb').ckeditor();
+     });
+
+
+     document.getElementById("file").onchange = function () {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+               // get loaded data and render thumbnail.
+               document.getElementById("imageThumb").src = e.target.result;
+          };
+
+          // read the image file as a data URL.
+          reader.readAsDataURL(this.files[0]);
+     };
+</script>

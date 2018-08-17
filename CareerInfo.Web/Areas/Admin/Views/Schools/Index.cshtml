@@ -1,0 +1,110 @@
+@model IEnumerable<CareerInfo.Model.School>
+
+
+@{
+     ViewData["Title"] = "Schools";
+     ViewBag.BodyId = "schools";
+}
+
+@section Nav{
+     @Html.Partial("_SchoolNav")
+}
+
+<div id="innerHeader">
+     <div class="container-fluid">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+               <h2><span class="glyphicons glyphicons-mixed-buildings"></span> Schools <span class="badge">@Model.Count()</span></h2>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right">
+               <input class="search input-sm" placeholder="Search" type="search" />
+          </div>
+     </div>
+</div>
+
+
+<div id="innerCon">
+     <div class="container-fluid">
+          <table class="table table-responsive">
+               <thead>
+                    <tr>
+                         <th>
+                              S/N
+                         </th>
+                         <th>
+                              School Name
+                         </th>
+                         <th>
+                              Email
+                         </th>
+                         <th>
+                              Address
+                         </th>
+                    </tr>
+               </thead>
+               <tbody>
+                    @foreach(var item in Model.OrderBy(e => e.Name))
+                    {
+                         <tr>
+                              <td>
+                                   <div class="btn-group">
+                                        <button type="button" class="btn btn-unique">Select</button>
+                                        <button type="button" class="btn btn-unique dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                             <span class="caret"></span>
+                                             <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                             <li><a href="/Admin/Schools/Details/@item.Tagname"><span class="glyphicons glyphicons-nameplate"></span> View Details </a> </li>
+                                             <li role="separator" class="divider"></li>
+                                             <li><a href="/Admin/Schools/Edit/@item.Tagname"><span class="glyphicons glyphicons-edit"></span> Edit Details </a> </li>
+                                             <li role="separator" class="divider"></li>
+                                             <li><a href="/Admin/Schools/Delete/@item.Tagname"><span class="glyphicons glyphicons-bin"></span> Delete School</a> </li>
+                                        </ul>
+                                   </div>
+                              </td>
+                              <td class="name">
+                                   @item.Name
+                              </td>
+                              <td>
+                                   @item.Email
+                              </td>
+                              <td class="state">
+                                   @item.Address, @item.State
+                              </td>
+                         </tr>
+                    }
+               </tbody>
+               <tfoot>
+
+               </tfoot>
+          </table>
+     </div>
+</div>
+
+
+<script type="text/javascript">
+    var options = {
+        valueNames: ['name', 'state']
+    };
+
+     var userList = new List('mainInnerCon', options);
+</script>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+               <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><span class="glyphicons glyphicons-mixed-buildings"></span> Add School</h4>
+               </div>
+               <div class="modal-body">
+                    @await Html.PartialAsync("Create")
+               </div>
+               <div class="modal-footer">
+               </div>
+          </div>
+     </div>
+</div>

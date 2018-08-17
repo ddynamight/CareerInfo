@@ -1,0 +1,240 @@
+﻿main {
+     background-color: rgba(100, 100, 100, 0.5);
+}
+
+
+body#courses main #innerBanner {
+    background-image: url('/Content/images/banner1.png');
+}
+
+main #courseBanner {
+     background-color: rgba(50, 50, 50, 1);
+     background-position: center center;
+     background-repeat: no-repeat;
+     clear: both;
+     height: auto;
+     min-height: 20vh;
+     width: 100%;
+}
+
+main #courseBanner .container {
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+main #courseBanner .container h2 {
+    color: rgba(255, 255, 255, 1);
+    font-family: inderRegular;
+    font-size: 2.5em;
+    margin: auto;
+    padding: 5em 0 0 0;
+    text-transform: uppercase;
+}
+
+main #courseBanner .container h2 span {
+    font-size: 1.5em;
+}
+
+
+main #courseBanner .container h4 {
+    color: rgba(255, 255, 255, 1);
+    font-family: inderRegular;
+    font-size: 1.05em;
+    font-style: italic;
+    padding: 1em 0 2em 0;
+}
+
+main #courseBanner .container p {
+    color: rgba(255, 255, 255, 1);
+    font-family: inderRegular;
+    font-size: 1.2em;
+    font-style: italic;
+    padding: 0 0 2em 0;
+}
+
+
+
+
+
+main #innerBanner {
+    background-position: center center;
+    background-repeat: no-repeat;
+    clear: both;
+    height: auto;
+    min-height: 20vh;
+    width: 100%;
+}
+
+main #innerBanner .container {
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+main #innerBanner .container h2 {
+    color: rgba(255, 255, 255, 1);
+    font-family: inderRegular;
+    font-size: 2.5em;
+    margin: auto;
+    padding: 5em 0 0 0;
+    text-transform: uppercase;
+}
+
+main #innerBanner .container h2 span {
+    font-size: 1.5em;
+}
+
+
+main #innerBanner .container h4 {
+    color: rgba(255, 255, 255, 1);
+    font-family: inderRegular;
+    font-size: 1.05em;
+    font-style: italic;
+    padding: 1em 0 2em 0;
+}
+
+main #innerBanner .container p {
+    color: rgba(255, 255, 255, 1);
+    font-family: inderRegular;
+    font-size: 1.2em;
+    font-style: italic;
+    padding: 0 0 2em 0;
+}
+
+
+
+.bg-unique {
+    background-color: rgba(19, 104, 155, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.btn-unique {
+    background-color: rgba(19, 104, 155, 1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
+}
+
+.btn-unique:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+main #innerCon {
+     background-color: transparent !important;
+     clear: both;
+     height: auto;
+     min-height: 50vh;
+     padding: 2em 0;
+     width: 100%;
+}
+
+
+main #innerCon .container-fluid div[class*=col] > div {
+     background-color: rgba(255, 255, 255, 1);
+     height: auto;
+     margin: 2em 0 0 0;
+     min-height: 120px;
+     padding: 0;
+}
+
+
+main #innerCon .container-fluid div[class*=col] > div h2 {
+     background-color: rgba(19, 104, 155, 1);
+     clear: both;
+     color: rgba(255, 255, 255, 1);
+     font-family: inderRegular;
+     font-size: 1.5em;
+     padding: 0.5em 1em;
+}
+
+main #innerCon .container-fluid div[class*=col] > div h5 {
+     clear: both;
+     color: rgba(19, 104, 155, 1);
+     font-size: 1.25em;
+     font-weight: 900;
+     padding: 0.5em 1em;
+}
+
+main #innerCon .container-fluid div[class*=col] > div h6 {
+     clear: both;
+     font-family: inderRegular;
+     font-size: 1.2em;
+     font-weight: 900;
+     margin: 1em 0 0 0;
+     padding: 0.5em 2em;
+}
+
+main #innerCon .container-fluid div[class*=col] > div h6:last-child {
+     padding-bottom: 2em;
+}
+
+main #innerCon .container-fluid div[class*=col] > div h6 span {
+     font-family: "Segoe UI";
+}
+
+main #innerCon .container-fluid div[class*=col] > div > p {
+     clear: both;
+     color: rgba(50, 50, 50, 1);
+     font-size: 1em;
+     font-weight: 500;
+     margin: 1em 0;
+     padding: 0.5em 2em 0.5em 2em;
+     text-align: justify;
+}
+
+main #innerCon .container-fluid div[class*=col] > div > p:last-child {
+     padding-bottom: 2em;
+}
+
+main #innerCon .container-fluid div[class*=col] > div > #reviewsCon {
+     padding: 2em;
+}
+
+main #innerCon .container-fluid div[class*=col] > div > #requestCon {
+     padding: 2em;
+}
+
+main #innerCon .container-fluid div[class*=col] > div > div.comments {
+     padding: 1em 2em;
+}
+
+main #innerCon .container-fluid div[class*=col] > div > div.comments h4 {
+     border-top: 1px solid rgba(0, 0, 0, 1);
+     color: rgba(0, 0, 0, 1);
+     font-family: inderRegular;
+     padding: 0.25em 0; 
+}
+
+
+main #innerCon .container-fluid div[class*=col] > div > div.comments p {
+     font-family: "Segoe UI";
+     font-size: 1.2em;
+     text-align: justify;
+}
+
+
+
+main #innerCon .container-fluid div[class*=col] > div > div.statOptions {
+     background-color: rgba(50, 50, 50, 0.5);
+     clear: both;
+     color: rgba(255, 255, 255, 1);
+     display: flex;
+     height: auto;
+     min-height: 10px;
+     padding: 0.1em 0;
+}
+
+main #innerCon .container-fluid div[class*=col] > div > div.statOptions > div {
+     flex: 1;
+     padding: 0.25em 1em;
+}
+
+main #innerCon .container-fluid div[class*=col] > div > div.statOptions > div p a {
+     color: rgba(255, 255, 255, 1);
+     text-decoration: none;
+     text-transform: none;
+}
+

@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>@ViewData["Title"] - CareerInfo</title>
+
+     <link rel="shortcut icon" href="/Content/images/favicon.ico" type="image/x-icon" />
+     <link href="~/Content/Styles/fonts.css" rel="stylesheet" />
+     <link href="~/Content/Styles/bootstrap.min.css" rel="stylesheet" />
+     <link href="~/Content/Styles/jquery-ui.min.css" rel="stylesheet" />
+     <link href="~/Content/Styles/myglyphicons2.css" rel="stylesheet" />
+     <link href="~/Content/Styles/font-awesome.css" rel="stylesheet" />
+     <link href="~/Content/Styles/site.css" rel="stylesheet" />
+     <link href="~/Content/Styles/animate.css" rel="stylesheet" />
+
+     <link href="@ViewBag.Styles" rel="stylesheet" />
+</head>
+<body id="@ViewBag.BodyId">
+     <header>
+          <div class="container-fluid">
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <h1>
+                         <a href="/">
+                              <img src="~/Content/images/logo_white.png" alt="CareerInfo" />
+                         </a>
+                    </h1>
+               </div>
+
+               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 tex-right">
+                    @await Html.PartialAsync("_LoginPartial")
+               </div>
+          </div>
+     </header>
+     <main>
+          @RenderBody()
+     </main>
+
+     @*<footer>
+          <div>
+               <h2>Follows us on</h2>
+
+               <a href="http://www.twitter.com/cinsolng" target="_blank"><span class="social social-twitter"></span></a>
+               <a href="http://www.facebook.com/cinsolng" target="_blank"><span class="social social-facebook"></span></a>
+               <a href="http://www.instagram.com/cinsolng" target="_blank"><span class="social social-instagram"></span></a>
+               <a href="http://www.linkedin.com/ng/cinsolng" target="_blank"><span class="social social-linked-in"></span></a>
+
+               <p>
+                    &copy;@DateTime.Now.Year CareerInfo. <br> All Rights Reserved.
+               </p>
+          </div>
+          <div>
+               <div class="container-fluid">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                         <h2>Contact Us</h2>
+
+                         <p>
+                              <span class="glyphicons glyphicons-mixed-buildings"></span> 17, Teachers Street, Ikorodu, Lagos, Nigeria.
+                         </p>
+                         <p>
+                              <span class="glyphicons glyphicons-headset"></span> 2348021234567
+                         </p>
+                         <p>
+                              <span class="glyphicons glyphicons-envelope"></span> hello@careerinfo.com.ng
+                         </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                         <h2>Informations</h2>
+
+                         <p>
+                              <a href="/About/Security">Security</a>
+                         </p>
+                         <p>
+                              <a href="/About/Policy">Policy</a>
+                         </p>
+                         <p>
+                              <a href="/About/TermsOfService">Terms of Service</a>
+                         </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                         <h2>Quick Links</h2>
+
+                         <p>
+                              <a href="/Contact/Faqs">Faqs</a>
+                         </p>
+                         <p>
+                              <a href="/Contact/Careers">Careers</a>
+                         </p>
+                         <p>
+                              <a href="/About/BrandUsage">Brand Usage</a>
+                         </p>
+                    </div>
+               </div>
+          </div>
+     </footer>*@
+
+     <script src="~/Content/scripts/jquery-3.2.1.min.js"></script>
+     <script src="~/Content/scripts/bootstrap.min.js"></script>
+     @*<script src="~/Content/scripts/modernizr.js"></script>*@
+     <script src="~/Content/scripts/jquery-ui.min.js"></script>
+     <script src="~/Content/scripts/jquery.validate.js"></script>
+     <script src="~/Content/scripts/jquery.unobtrusive-ajax.min.js"></script>
+     <script src="~/Content/scripts/list.min.js"></script>
+     <script src="~/Content/scripts/myScripts.js"></script>
+     <script src="~/Content/scripts/wow.min.js"></script>
+     <script>
+          var wow = new WOW(
+               {
+                    boxClass: 'wow',      // animated element css class (default is wow)
+                    animateClass: 'animated', // animation css class (default is animated)
+                    offset: 0,          // distance to the element when triggering the animation (default is 0)
+                    mobile: true,       // trigger animations on mobile devices (default is true)
+                    live: true,       // act on asynchronously loaded content (default is true)
+                    callback: function (box) {
+                         // the callback is fired every time an animation is started
+                         // the argument that is passed in is the DOM node being animated
+                    },
+                    scrollContainer: null // optional scroll container selector, otherwise use window
+               }
+          );
+          wow.init();
+     </script>
+
+     @RenderSection("Scripts", required: false)
+     <script>
+          (function (d, s, id) {
+               var js, fjs = d.getElementsByTagName(s)[0];
+               if (d.getElementById(id)) return;
+               js = d.createElement(s); js.id = id;
+               js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
+               fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+
+</body>
+</html>

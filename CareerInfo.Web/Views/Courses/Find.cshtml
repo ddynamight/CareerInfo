@@ -1,0 +1,66 @@
+@model IEnumerable<CareerInfo.Model.Course>
+
+@{
+     ViewData["Title"] = "Find Course";
+     Layout = "_InnerPages";
+     ViewBag.BodyId = "courses";
+}
+
+
+<div id="innerBanner">
+     <div class="container">
+          @if ((ViewData["search"]) != null)
+          {
+               <h2><span class="fa fa-book"></span> @ViewData["search"]</h2>
+               <p>we found @Model.Count()</p>
+          }
+          else
+          {
+               <h2><span class="fa fa-book"></span> All Courses</h2>
+               <p>list of all courses found</p>
+          }
+
+     </div>
+</div>
+
+
+<div id="innerCon">
+     <div class="container-fluid">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+               @foreach (var item in Model.OrderBy(e => e.Name))
+               {
+                    <div>
+                         <h2><span class="fa fa-book"></span> @item.Name</h2>
+                         @*<h5><span class="glyphicons glyphicons-mixed-buildings"></span> @item.School.Name</h5>*@
+                         <p>@item.Description</p>
+
+                         <div class="statOptions">
+                              <div>
+                                   <p>
+                                        <a href="/Courses/Details/@item.Tagname"><span class="fa fa-folder-open"></span> View Details</a>
+                                   </p>
+                              </div>
+                              <div>
+                                   <p><a href="#">@item.Reviews.Count() <span class="fa fa-eye"></span> Reviews</a></p>
+                              </div>
+                              <div>
+                                   <p><a href="#">@item.Reviews.Count() <span class="fa fa-star"></span> Ratings</a></p>
+                              </div>
+                         </div>
+
+                         
+                    </div>
+               }
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               <div>
+                    <h2><span class="fa fa-newspaper-o"></span> Latest News</h2>
+               </div>
+
+               <div>
+                    <h2><span class="glyphicons glyphicons-blog"></span> Blog Posts</h2>
+               </div>
+          </div>
+     </div>
+</div>

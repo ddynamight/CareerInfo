@@ -1,0 +1,30 @@
+﻿<div class="container-fluid text-center">
+     @using (Html.BeginForm("Create", "Reviews", FormMethod.Post, new { enctype = "multipart/form-data" }))
+     {
+          @Html.AntiForgeryToken()
+          @Html.ValidationSummary(true)
+
+
+          <div class="form-group">
+               <label for="ratingTb">Rating <span class="glyphicon glyphicon-question-sign"></span></label>
+
+               <input class="form-control" id="ratingTb" name="Rating" type="range" min="1" max="5" />
+          </div>
+
+          <div class="form-group">
+               <label for="commentTb">Comment <span class="glyphicon glyphicon-question-sign"></span></label>
+
+               @Html.TextArea("Comment", new { @class = "form-control", id = "commentTb", placeholder = "Reqest Information e.g. What will I benefit from...", rows = "5" })
+          </div>
+
+          <input name="returnUrl" value="@ViewBag.RedirectUrl" hidden="hidden" />
+          <input name="courseTag" value="@ViewBag.CourseTag" hidden="hidden" />
+
+
+          <div class="form-group">
+               <p>
+                    <button type="submit" class="btn btn-lg btn-unique"><span class="glyphicon glyphicon-floppy-save"></span> Submit Review </button>
+               </p>
+          </div>
+     }
+</div>

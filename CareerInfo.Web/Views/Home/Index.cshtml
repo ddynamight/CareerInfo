@@ -1,0 +1,245 @@
+
+@{
+     ViewData["Title"] = "Home";
+     ViewBag.BodyId = "home";
+
+}
+
+<div id="banner">
+     <div class="container">
+          <div>
+               <h2>Build Your Career around <span>3 Subjects</span> of Your Interest</h2>
+               <p>simple . personal . exclusive . fast</p>
+          </div>
+          <form action="">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div id="searchControls">
+                         <div>
+                              <select class="form-control" id="subjectOne" name="subjectOne" onload="getSubjects()">
+                                   <option>Select a Subject </option>
+                              </select>
+                         </div>
+                         <div>
+                              <select class="form-control" id="subjectTwo" name="subjectTwo" onload="getSubjects()">
+                                   <option>Select a Subject </option>
+                              </select>
+                         </div>
+                         <div>
+                              <select class="form-control" id="subjectThree" name="subjectThree" onload="getSubjects()">
+                                   <option>Select a Subject </option>
+                              </select>
+                         </div>
+                         <div>
+                              <button class="btn btn-unique" type="button" onclick="findCourses()">Find Career!</button>
+                         </div>
+                    </div>
+                    @*<h6>Select three other subjects of interest to you apart from English Language</h6>*@
+
+                    @*<div class="input-group input-group-lg">
+                         <input id="searchTb" type="text" class="form-control" placeholder="Search for...">
+                         <span class="input-group-btn">
+                              <button class="btn btn-unique" type="button" onclick="findCourses()">Find Career!</button>
+                         </span>
+                    </div><!-- /input-group -->*@
+               </div>
+          </form>
+     </div>
+</div>
+
+<div id="newsBlog">
+     <div>
+          <div class="container-fluid">
+               <label><span class="fa fa-newspaper-o"></span> Latest News</label>              
+                    @if ((CareerInfo.Model.News)ViewData["latestNews"] != null)
+                    {
+                         <p><a href="/News/Details/@(((CareerInfo.Model.News)ViewData["latestNews"]).Tagname)">@(((CareerInfo.Model.News)ViewData["latestNews"]).Title)</a> </p>
+                    }
+          </div>
+     </div>
+     <div>
+          <div class="container-fluid">
+               <label><span class="glyphicons glyphicons-blog"></span> Latest Blog</label>
+               @if ((CareerInfo.Model.Blog)ViewData["latestBlog"] != null)
+               {
+                    <p><a href="/Blogs/Details/@(((CareerInfo.Model.Blog)ViewData["latestBlog"]).Tagname)">@(((CareerInfo.Model.Blog)ViewData["latestBlog"]).Title)</a> </p>
+               }               
+          </div>
+     </div>
+</div>
+
+
+@*<div id="indexCol">
+         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+             <h2><span class="fa fa-database"></span> Information</h2>
+             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+         </div>
+
+         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+             <h2><span class="fa fa-book"></span> Education</h2>
+             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+         </div>
+
+         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+             <h2><span class="fa fa-book"></span> Academics</h2>
+             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+         </div>
+
+         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+             <h2><span class="fa fa-book"></span> Academics</h2>
+             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+         </div>
+     </div>
+
+     <div id="indexTabs">
+          <div class="container-fluid">
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div>
+                         <h2><span class="fa fa-book"></span> Academics</h2>
+                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+                    </div>
+               </div>
+
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div>
+                         <h2><span class="fa fa-book"></span> Academics</h2>
+                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+                    </div>
+               </div>
+
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div>
+                         <h2><span class="fa fa-book"></span> Academics</h2>
+                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div id="indexFeatured">
+          <div class="container-fluid text-center">
+               <h2>Featured Course</h2>
+          </div>
+
+          <div class="container-fluid">
+               <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                    <div>
+                         <div>
+                              <h2>Social Studies</h2>
+                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero.</p>
+                         </div>
+                    </div>
+
+                    <div>
+                         <div>
+                              <h2>Social Studies</h2>
+                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero.</p>
+                         </div>
+                    </div>
+               </div>
+
+               <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                    <div>
+                         <div>
+                              <h2>Information Technology</h2>
+                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est.</p>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div id="indexNewsletter">
+          <div class="container-fluid">
+               <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                    <h2><span class="fa fa-envelope"></span> Subscribe to Our Newsletter</h2>
+                    <p>...get the latest news, tips, suggestions and thoughts from our experts</p>
+               </div>
+               <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                    <div class="input-group input-group-lg">
+                         <input type="text" class="form-control" placeholder="Enter email address...">
+                         <span class="input-group-btn">
+                              <button class="btn btn-primary" type="button">Subscribe!</button>
+                         </span>
+                    </div><!-- /input-group -->
+               </div>
+          </div>
+     </div>
+
+     <div id="indexNewsBlog">
+          <div class="container-fluid">
+               <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                    <h2><span class="fa fa-newspaper-o"></span> Latest News</h2>
+
+                    <div>
+                         <img src="~/Content/images/newsImage.png" />
+                         <div>
+                              <h2>Some News Title Goes Here</h2>
+                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+                              <a href="#">Read More</a>
+                         </div>
+                    </div>
+
+                    <div>
+                         <img src="~/Content/images/newsImage.png" />
+                         <div>
+                              <h2>Some News Title Goes Here</h2>
+                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+                              <a href="#">Read More</a>
+                         </div>
+                    </div>
+
+                    <a href="#">Read all news</a>
+
+               </div>
+               <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                    <h2><span class="glyphicons glyphicons-blog"></span> From Our Blog</h2>
+
+                    <img class="img img-responsive" src="~/Content/images/blogImage.png" />
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet</p>
+                    <a href="#">Read More</a>
+               </div>
+          </div>
+     </div>
+*@
+
+<script>
+     window.onload = initAll;
+     function initAll() {
+          getSubjects();
+     }
+
+
+     function findCourses() {
+          var tag = $("#searchTb").val();
+
+          var tagOne = $('#subjectOne option:selected').val();
+          var tagTwo = $('#subjectTwo option:selected').val();
+          var tagThree = $('#subjectThree option:selected').val();
+
+        window.location.href = window.location + "Courses/" + "Find/" + tagOne + "/" + tagTwo + "/" + tagThree;
+     }
+
+     function getSubjects() {
+          var subjectsArray = ["Select a Subject", "Agricultural science", "Biology", "Chemistry", "Civic Education", "Commerce", "Computer Studies", "CRK", "Economics", "Financial Accounting", "Food & Nutrition", "French", "Further Mathematics", "Geography", "Government", "Hausa", "History", "Home Economics", "Igbo", "IRK", "Literature in English", "Marketing", "Mathematics", "Music", "Physical & Health Education", "Physics", "Technical Drawing", "Typewriting", "Yoruba"];
+
+          var subjectOne = $('#subjectOne');
+          var subjectTwo = $('#subjectTwo');
+          var subjectThree = $('#subjectThree');
+
+          subjectOne.empty();
+          for (var i = 0; i < subjectsArray.length; i++) {
+               subjectOne.append("<option value='" + subjectsArray[i] + "'>" + subjectsArray[i] + "</option>");
+          }
+
+          subjectTwo.empty();
+          for (var i = 0; i < subjectsArray.length; i++) {
+               subjectTwo.append("<option value='" + subjectsArray[i] + "'>" + subjectsArray[i] + "</option>");
+          }
+
+          subjectThree.empty();
+          for (var i = 0; i < subjectsArray.length; i++) {
+               subjectThree.append("<option value='" + subjectsArray[i] + "'>" + subjectsArray[i] + "</option>");
+          }
+     }
+
+</script>

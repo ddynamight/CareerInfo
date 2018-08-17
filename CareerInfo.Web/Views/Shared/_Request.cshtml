@@ -1,0 +1,30 @@
+﻿<div class="container-fluid text-center">
+     @using (Html.BeginForm("Create", "Requests", FormMethod.Post, new { enctype = "multipart/form-data" }))
+     {
+          @Html.AntiForgeryToken()
+          @Html.ValidationSummary(true)
+
+
+          <div class="form-group">
+               <label for="ddlCategory">Select a Request Category <span class="glyphicon glyphicon-question-sign"></span></label>
+
+               @Html.DropDownList("Category", new SelectList((string[])ViewData["categoryDdl"]), new { @class = "form-control", id = "ddlCategory" })
+          </div>
+
+          <div class="form-group">
+               <label for="commentTb">Comment/Information <span class="glyphicon glyphicon-question-sign"></span></label>
+
+               @Html.TextArea("Comment", new { @class = "form-control", id = "commentTb", placeholder = "Reqest Information e.g. What will I benefit from...", rows = "5" })
+          </div>
+
+          <input name="returnUrl" value="@ViewBag.RedirectUrl" hidden="hidden" />
+          <input name="courseTag" value="@ViewBag.CourseTag" hidden="hidden" />
+
+
+          <div class="form-group">
+               <p>
+                <button type="submit" class="btn btn-lg btn-unique"><span class="glyphicon glyphicon-floppy-save"></span> Submit Request </button>
+               </p>
+          </div>
+     }
+</div>
